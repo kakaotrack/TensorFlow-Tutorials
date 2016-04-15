@@ -22,3 +22,4 @@ install:
     fi
 script: 
 - python 3_net.py
+- ls ?_*.py|xargs -n 1 -P 3 python
