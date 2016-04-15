@@ -3,9 +3,9 @@ import collections
 import numpy as np
 import tensorflow as tf
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-matplotlib.use('Agg')
 
 # Configuration
 batch_size = 20
@@ -102,7 +102,7 @@ with tf.Session() as sess:
     # Initializing all variables
     tf.initialize_all_variables().run()
 
-    for step in range(10001):
+    for step in range(100):
         batch_inputs, batch_labels = generate_batch(batch_size)
         _, loss_val = sess.run([train_op, loss],
                 feed_dict={train_inputs: batch_inputs, train_labels: batch_labels})

@@ -49,7 +49,7 @@ with tf.Session() as sess:
     # you need to initialize all variables
     tf.initialize_all_variables().run()
 
-    for i in range(20):
+    for i in range(100):
         for start, end in zip(range(0, len(trX), 100), range(100, len(trX), 100)):
             input_ = trX[start:end]
             mask_np = np.random.binomial(1, 1 - corruption_level, input_.shape)
